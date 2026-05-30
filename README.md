@@ -59,7 +59,7 @@ Applies a rule-based deterministic scoring regex to evaluate model responses aga
 
 ## 🚀 How to Replicate
 Ensure you have a clean Python environment, then install the absolute minimum dependencies:
-Bash
+#### Bash
 ```text
 pip install pandas torch transformers matplotlib seaborn
 ```
@@ -67,10 +67,13 @@ pip install pandas torch transformers matplotlib seaborn
 Run the pipeline sequentially from your terminal:
 
 ### Step 1: Synthesize the benchmarks
+#### Bash
 python benchmark_builder.py
 
 ### Step 2: Run the automated local evaluation loop
+#### Bash
 python eval_harness.py
 
 ### Step 3: Grade the outputs and generate the analytical charts
+#### Bash
 python visualize_results.py
