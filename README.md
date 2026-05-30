@@ -28,6 +28,7 @@ Using **Qwen2.5-1.5B-Instruct** as the primary local evaluation target via a loc
 ## 🛠️ Repository Architecture & Workflow
 
 The framework operates sequentially through three decoupled modules:
+```text
 📦 eleuther-reasoning-bench
 ├── 1️⃣ benchmark_builder.py     # Synthesizes the 3x3 logical evaluation matrix (CSV)
 ├── 2️⃣ eval_harness.py          # Localized CPU inference loop executing Qwen2.5-1.5B
