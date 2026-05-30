@@ -35,6 +35,7 @@ The framework operates sequentially through three decoupled modules:
 ├── 2️⃣ eval_harness.py          # Localized CPU inference loop executing Qwen2.5-1.5B
 └── 3️⃣ visualize_results.py     # Programmatic scoring and academic-grade plot generation
 ```
+---
 
 ## 🧠 Core Module Mechanics
 ### 1. Data Synthesis (benchmark_builder.py)
@@ -53,6 +54,8 @@ Loads tokenizers and model weights via transformers directly into local memory. 
 
 ### 3. Quantitative Analysis (visualize_results.py)
 Applies a rule-based deterministic scoring regex to evaluate model responses against strict logical verification boundaries, compiling statistics and leveraging seaborn to output performance trends.
+
+---
 
 ## 🚀 How to Replicate
 Ensure you have a clean Python environment, then install the absolute minimum dependencies:
