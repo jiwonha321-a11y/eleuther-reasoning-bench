@@ -68,12 +68,18 @@ Run the pipeline sequentially from your terminal:
 
 ### Step 1: Synthesize the benchmarks
 #### Bash
+```text
 python benchmark_builder.py
+```
 
 ### Step 2: Run the automated local evaluation loop
 #### Bash
+```text
 python eval_harness.py
+```
 
 ### Step 3: Grade the outputs and generate the analytical charts
 #### Bash
+```text
 python visualize_results.py
+```
