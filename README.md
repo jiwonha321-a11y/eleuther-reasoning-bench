@@ -36,8 +36,8 @@ The framework operates sequentially through three decoupled modules:
 └── 3️⃣ visualize_results.py     # Programmatic scoring and academic-grade plot generation
 ```
 
-🧠 Core Module Mechanics
-1. Data Synthesis (benchmark_builder.py)
+## 🧠 Core Module Mechanics
+### 1. Data Synthesis (benchmark_builder.py)
 Generates a deterministic dataset across three core reasoning dimensions:
 
 LOG_001: Relative motion math calculation.
@@ -48,18 +48,20 @@ LOG_003: Conjunction fallacy (The Linda Problem).
 
 Each domain is duplicated into three operational prompt templates (clean, hinted, misleading) to evaluate how the integration of external contextual anchors shifts the model's inner token prediction distribution.
 
-2. Execution Harness (eval_harness.py)
+### 2. Execution Harness (eval_harness.py)
 Loads tokenizers and model weights via transformers directly into local memory. Bypasses standard Windows DLL execution errors (WinError 1114) and API rate limits by enforcing a localized CPU execution routine with greedy decoding (temperature=0.0).
 
-3. Quantitative Analysis (visualize_results.py)
+### 3. Quantitative Analysis (visualize_results.py)
 Applies a rule-based deterministic scoring regex to evaluate model responses against strict logical verification boundaries, compiling statistics and leveraging seaborn to output performance trends.
 
-🚀 How to Replicate
+## 🚀 How to Replicate
 Ensure you have a clean Python environment, then install the absolute minimum dependencies:
 
+```text
 Bash
 pip install pandas torch transformers matplotlib seaborn
 Run the pipeline sequentially from your terminal:
+```
 
 Bash
 # Step 1: Synthesize the benchmarks
