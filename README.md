@@ -1,4 +1,3 @@
-# eleuther-reasoning-bench
 # Evaluation of LLM Reasoning Robustness Under Contextual Interventions
 
 This repository contains an automated evaluation harness designed to stress-test the logical reasoning capabilities of Large Language Models (LLMs) when subjected to biased contextual prompts. 
@@ -28,38 +27,9 @@ Using **Qwen2.5-1.5B-Instruct** as the primary local evaluation target via a loc
 ## 🛠️ Repository Architecture & Workflow
 
 The framework operates sequentially through three decoupled modules:
+
 ```text
 📦 eleuther-reasoning-bench
 ├── 1️⃣ benchmark_builder.py     # Synthesizes the 3x3 logical evaluation matrix (CSV)
 ├── 2️⃣ eval_harness.py          # Localized CPU inference loop executing Qwen2.5-1.5B
 └── 3️⃣ visualize_results.py     # Programmatic scoring and academic-grade plot generation
-
-### 1. Data Synthesis (`benchmark_builder.py`)
-Generates a deterministic dataset across three core reasoning dimensions:
-* **LOG_001:** Relative motion math calculation.
-* **LOG_002:** Syllogistic categorical deduction fallacy.
-* **LOG_003:** Conjunction fallacy (The Linda Problem).
-
-### 2. Execution Harness (`eval_harness.py`)
-Loads tokenizers and model weights via `transformers` directly into local memory. Bypasses standard Windows DLL execution errors (`WinError 1114`) and API rate limits by enforcing a localized CPU execution routine with greedy decoding (`temperature=0.0`).
-
-### 3. Quantitative Analysis (`visualize_results.py`)
-Applies a rule-based deterministic scoring regex to evaluate model responses against strict logical verification boundaries, compiling statistics and leveraging `seaborn` to output performance trends.
-
----
-
-## 🚀 How to Replicate
-
-Ensure you have a clean Python environment, then install the absolute minimum dependencies:
-
-```bash
-pip install pandas torch transformers matplotlib seaborn
-
-# Step 1: Synthesize the benchmarks
-python benchmark_builder.py
-
-# Step 2: Run the automated local evaluation loop
-python eval_harness.py
-
-# Step 3: Grade the outputs and generate the analytical charts
-python visualize_results.py
