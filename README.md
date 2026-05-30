@@ -66,11 +66,11 @@ pip install pandas torch transformers matplotlib seaborn
 
 Run the pipeline sequentially from your terminal:
 
-# Step 1: Synthesize the benchmarks
+### Step 1: Synthesize the benchmarks
 python benchmark_builder.py
 
-# Step 2: Run the automated local evaluation loop
+### Step 2: Run the automated local evaluation loop
 python eval_harness.py
 
-# Step 3: Grade the outputs and generate the analytical charts
+### Step 3: Grade the outputs and generate the analytical charts
 python visualize_results.py
