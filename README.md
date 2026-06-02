@@ -39,14 +39,22 @@ To uncover whether the model relies on true structural logic or shallow heuristi
 
 ## 🛠️ Repository Architecture & Workflow
 
-The framework operates sequentially through three decoupled modules:
+The framework operates sequentially through three decoupled modules. To preserve the chronological research narrative and track optimization trajectories, the repository is structured into isolated evolutionary phases:
 
-📦 eleuther-reasoning-bench
 ```text
-├── 1️⃣ benchmark_builder.py     # Synthesizes the 3x3 logical evaluation matrix (CSV)
-├── 2️⃣ eval_harness.py          # Localized CPU inference loop executing Qwen2.5-1.5B
-└── 3️⃣ visualize_results.py     # Programmatic scoring and academic-grade plot generation
+📦 eleuther-reasoning-bench
+├── 📂 v1_baseline_harness       # Baseline evaluation harness & qualitative diagnostic phase
+│   ├── benchmark_builder.py     # Synthesizes the initial 3x3 evaluation matrix (CSV)
+│   ├── eval_harness.py          # Localized CPU inference loop executing Qwen2.5-1.5B
+│   ├── visualize_results.py     # Programmatic scoring and analytical plot generation
+│   └── error_analyzer.py        # Qualitative error mining & sycophancy detection script
+│
+└── 📂 v2_cot_mitigation         # Mitigation & cognitive defense engineering phase
+    ├── benchmark_builder_v2.py  # Synthesizes v2 matrix integrating CoT prompt layers
+    ├── eval_harness_v2.py       # Localized inference loop with integrated CoT triggers
+    └── visualize_results_v2.py  # Comparative analysis pipeline (v1 Baseline vs. v2 CoT)
 ```
+
 ---
 
 ## 🧠 Core Module Mechanics
