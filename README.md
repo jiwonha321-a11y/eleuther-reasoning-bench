@@ -138,7 +138,7 @@ To bridge behavioral observation with inner network mechanics (**Mechanistic Int
 
 ### 📊 Statistical Uncertainty Under Intervention
 
-* **Information Decay in Sycophancy:** Under the standard `Misleading` prompt, the token prediction confidence drops sharply ($0.88 \rightarrow 0.48$) while the **Shannon Entropy** skyrockets ($0.21 \rightarrow 0.83$). This statistical shift maps severe internal cognitive confusion where token weights fragment across conflicting semantic pathways, forcing the model to mirror user bias over logical ground truth.
-* **Structural Bounding via CoT:** Implementing the Chain-of-Thought layer actively suppresses this entropy spike ($0.83 \rightarrow 0.34$), anchoring the logit distribution back to deterministic structural processing. 
+![Logits Distribution Profile](v3_interpretability_stats/logit_distribution_profile.png)
 
-> 📌 *Note: The advanced distribution boxplots are programmatically compiled and saved as `v3_interpretability_stats/logit_distribution_profile.png` to validate underlying computational alignment.*
+* **Information Decay in Sycophancy:** Under the standard `Misleading` prompt, the token prediction confidence drops sharply ($0.88 \rightarrow 0.48$) while the **Shannon Entropy** skyrockets ($0.21 \rightarrow 0.83$). This statistical shift maps severe internal cognitive confusion where token weights fragment across conflicting semantic pathways, forcing the model to mirror user bias over logical ground truth.
+* **Structural Bounding via CoT:** Implementing the Chain-of-Thought layer actively suppresses this entropy spike ($0.83 \rightarrow 0.34$), anchoring the logit distribution back to deterministic structural processing.
