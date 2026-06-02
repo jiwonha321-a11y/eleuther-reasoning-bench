@@ -43,16 +43,19 @@ The framework operates sequentially through three decoupled modules. To preserve
 
 ```text
 📦 eleuther-reasoning-bench
-├── 📂 v1_baseline_harness       # Baseline evaluation harness & qualitative diagnostic phase
+├── 📂 v1_baseline_harness       # [Phase 1] Baseline evaluation harness & qualitative diagnostic phase
 │   ├── benchmark_builder.py     # Synthesizes the initial 3x3 evaluation matrix (CSV)
 │   ├── eval_harness.py          # Localized CPU inference loop executing Qwen2.5-1.5B
 │   ├── visualize_results.py     # Programmatic scoring and analytical plot generation
 │   └── error_analyzer.py        # Qualitative error mining & sycophancy detection script
 │
-└── 📂 v2_cot_mitigation         # Mitigation & cognitive defense engineering phase
-    ├── benchmark_builder_v2.py  # Synthesizes v2 matrix integrating CoT prompt layers
-    ├── eval_harness_v2.py       # Localized inference loop with integrated CoT triggers
-    └── visualize_results_v2.py  # Comparative analysis pipeline (v1 Baseline vs. v2 CoT)
+├── 📂 v2_cot_mitigation         # [Phase 2] Mitigation & cognitive defense engineering phase
+│   ├── benchmark_builder_v2.py  # Synthesizes v2 matrix integrating CoT prompt layers
+│   ├── eval_harness_v2.py       # Localized inference loop with integrated CoT triggers
+│   └── visualize_results_v2.py  # Comparative analysis pipeline (v1 Baseline vs. v2 CoT)
+│
+└── 📂 v3_interpretability_stats  # [Phase 3] Mechanistic Interpretability & Statistical Distribution Phase
+    └── stats_analyzer.py         # Evaluates localized token confidence and Shannon Entropy dynamics
 ```
 
 ---
