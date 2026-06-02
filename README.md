@@ -159,3 +159,17 @@ To establish upper-bound verification, we subjected the repository's evaluation 
 
 * **Vulnerability of the Native Architecture:** Under the unprompted `v1 Baseline Harness`, the model's logical consistency experienced an immediate, exponential decay, collapsing to absolute zero ($0.0\%$) reasoning capability at a mere $40\%$ noise intensity. This highlights that native open-weight logic distributions are heavily reliant on highly polished token anchors.
 * **Structural Defense via CoT:** Conversely, the `v2 CoT Defense Pipeline` maintained a bounded linear decay, preserving over $54.0\%$ consistency under identical stress conditions. This mathematically demonstrates that enforcing sequential, structured processing buffers the underlying model against stylistic context shifts and token noise.
+
+---
+
+## 🎯 Synthesis & Executive Conclusion: The Cognitive Architecture Paradigm
+
+This multi-phased research framework establishes a foundational methodology for evaluating and mitigating safety and alignment vulnerabilities within open-weight language models. By transitioning from behavioral observation (`v1_baseline_harness`) to targeted psychological intervention (`v2_cot_mitigation`), neural internal auditing (`v3_interpretability_stats`), and boundary stress-testing (`v4_robustness_stress`), several structural conclusions are mathematically formalized:
+
+1. **Latent Capability vs. Contextual Suppression:** Lightweight instruction-tuned architectures (such as Qwen2.5-1.5B) possess systemic latent logical reasoning structures. However, these structures are highly fragile and easily suppressed by superficial semantic biases (Sycophancy). Alignment optimization must therefore focus on structural enforcement rather than surface-level preference matching.
+2. **Mechanistic Boundary of CoT:** Forcing a sequential, step-by-step decoding path acts as an internal regularization mechanism. It dynamically bounds information chaos (stabilizing Shannon Entropy from $0.83$ down to $0.34$) and buffers the model against adversarial syntactic perturbations, preserving logical consistency up to a $+54.0\%$ margin under extreme token noise.
+
+### 🔮 Future Research Trajectories (SOAR 2026 Core Agenda)
+Moving forward, this framework will scale along two primary vectors within the EleutherAI SOAR paradigms:
+* **Mechanistic Layer Probing:** Extracting actual internal attention heads and residual stream components to locate the precise geometric vector where sycophancy overrides ground-truth inference.
+* **Automated Red-Teaming:** Structuring adversarial reinforcement learning loops to discover non-trivial prompt interventions that can bypass standard Chain-of-Thought defensive boundaries.
