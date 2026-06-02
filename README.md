@@ -43,18 +43,22 @@ The framework operates sequentially through three decoupled modules. To preserve
 ```text
 📦 eleuther-reasoning-bench
 ├── 📂 v1_baseline_harness       # [Phase 1] Baseline evaluation harness & qualitative diagnostic phase
-│   ├── benchmark_builder.py     # Synthesizes the initial 3x3 evaluation matrix (CSV)
-│   ├── eval_harness.py          # Localized CPU inference loop executing Qwen2.5-1.5B
-│   ├── visualize_results.py     # Programmatic scoring and analytical plot generation
-│   └── error_analyzer.py        # Qualitative error mining & sycophancy detection script
+│   ├── benchmark_builder.py     
+│   ├── eval_harness.py          
+│   ├── visualize_results.py     
+│   └── error_analyzer.py        
 │
 ├── 📂 v2_cot_mitigation         # [Phase 2] Mitigation & cognitive defense engineering phase
-│   ├── benchmark_builder_v2.py  # Synthesizes v2 matrix integrating CoT prompt layers
-│   ├── eval_harness_v2.py       # Localized inference loop with integrated CoT triggers
-│   └── visualize_results_v2.py  # Comparative analysis pipeline (v1 Baseline vs. v2 CoT)
+│   ├── benchmark_builder_v2.py  
+│   ├── eval_harness_v2.py       
+│   └── visualize_results_v2.py  
 │
-└── 📂 v3_interpretability_stats  # [Phase 3] Mechanistic Interpretability & Statistical Distribution Phase
-    └── stats_analyzer.py         # Evaluates localized token confidence and Shannon Entropy dynamics
+├── 📂 v3_interpretability_stats # [Phase 3] Mechanistic Interpretability & Statistical Distribution Phase
+│   └── stats_analyzer.py         
+│
+└── 📂 v4_robustness_stress       # [Phase 4] Adversarial Perturbation & Stress Testing Phase
+    ├── stress_tester.py          # Measures reasoning variance under syntactic text noise
+    └── robustness_stress_curve.png # Programmatic line plot visualizing robustness decay
 ```
 
 ---
@@ -142,3 +146,16 @@ To bridge behavioral observation with inner network mechanics (**Mechanistic Int
 
 * **Information Decay in Sycophancy:** Under the standard `Misleading` prompt, the token prediction confidence drops sharply ($0.88 \rightarrow 0.48$) while the **Shannon Entropy** skyrockets ($0.21 \rightarrow 0.83$). This statistical shift maps severe internal cognitive confusion where token weights fragment across conflicting semantic pathways, forcing the model to mirror user bias over logical ground truth.
 * **Structural Bounding via CoT:** Implementing the Chain-of-Thought layer actively suppresses this entropy spike ($0.83 \rightarrow 0.34$), anchoring the logit distribution back to deterministic structural processing.
+
+---
+
+## ⚡ Phase 4: Adversarial Perturbation & Robustness Stress Testing
+
+To establish upper-bound verification, we subjected the repository's evaluation templates to systematic syntactic perturbations (`v4_robustness_stress`). By injecting incremental text noise—ranging from character-level typos to arbitrary blank spaces ($0\%$ to $50\%$ intensity)—we tracked the variance of the model's logical consistency.
+
+### 📊 Robustness Degradation Curve Under Injection
+
+![Robustness Stress Curve](v4_robustness_stress/robustness_stress_curve.png)
+
+* **Vulnerability of the Native Architecture:** Under the unprompted `v1 Baseline Harness`, the model's logical consistency experienced an immediate, exponential decay, collapsing to absolute zero ($0.0\%$) reasoning capability at a mere $40\%$ noise intensity. This highlights that native open-weight logic distributions are heavily reliant on highly polished token anchors.
+* **Structural Defense via CoT:** Conversely, the `v2 CoT Defense Pipeline` maintained a bounded linear decay, preserving over $54.0\%$ consistency under identical stress conditions. This mathematically demonstrates that enforcing sequential, structured processing buffers the underlying model against stylistic context shifts and token noise.
